@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #F3F7FE;
+    --foreground: #0a0a0a;
+  }
+}
+
+body {
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.page-wrapper {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("/desktop.jpeg");
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.card-box {
+  color: #ffffff;
+  width: 100%;
+  max-width: 420px;
+  background-color: #4E1F6E;
+  padding: 32px 24px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.img {
+  display: flex;
+  justify-content: center;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.tittle {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.tittle h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.tittle h3 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 50px;
+  color: #ffffff;
+}
+
+.gls-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  gap: 6px;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(10px);
+  transition: background 0.25s, trasnform 0.25s, box-shadow0.25s;
+}
+
+.gls-btn:hover {
+  background: rgba(255, 255, 255, 0.28);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+}
+
+.footer {
+  width: 100%;
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 10px;
+  text-align: center;
+  opacity: 0.8s;
+}
+
+
+/*mobile*/
+@media (max-width: 768px) {
+  .page-wrapper {
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+      url("/mobile.jpeg");
+    background-attachment: scroll;
+    padding: 12px;
+  }
+
+  .card-box {
+    max-width: 100%;
+    padding: 28px 20px;
+    gap: 14px;
+  }
+
+  .avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .tittle h2 { font-size: 1.3rem; }
+  .tittle h3 { font-size: 0.95rem; }
+
+  .nav-bar {
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+
+  .gls-btn {
+    flex: 1;
+    min-width: 0;
+    padding: 10px 6px;
+    font-size: 0.85rem;
+  }
+}
+
+/* HP kecil */
+@media (max-width: 400px) {
+  .card-box {
+    padding: 24px 16px;
+  }
+
+  .avatar {
+    width: 88px;
+    height: 88px;
+  }
+
+  .tittle h2 { font-size: 1.15rem; }
+
+  .btn-icon {
+    font-size: 1.25rem;
+  }
+
+  .gls-btn {
+    font-size: 0.75rem;
+    border-radius: 12px;
+  }
+}
